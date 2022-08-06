@@ -6,7 +6,7 @@ Connect through SSH to remote Debian server and update repositories and install 
 
 ```
 sudo apt-get update ; \
-sudo apt-get install -y vim tmux htop git curl wget unzip zip gcc build-essential make
+sudo apt-get install -y vim tmux htop git curl wget unzip zip gcc build-essential make mc ranger
 ```
 
 Configure SSH:
@@ -28,7 +28,7 @@ sudo passwd www
 ## Init — must-have packages & ZSH
 
 ```
-sudo apt-get install -y zsh tree nginx zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev python3-dev python-imaging python3-lxml libxslt-dev python-libxml2 python-libxslt1 libffi-dev libssl-dev python-dev gnumeric libsqlite3-dev libpq-dev libxml2-dev libxslt1-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev supervisor
+sudo apt-get install -y zsh tree nginx zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev python3-dev python3-lxml libxslt-dev libffi-dev libssl-dev gnumeric libsqlite3-dev libpq-dev libxml2-dev libxslt1-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev supervisor
 ```
 
 Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
@@ -75,6 +75,16 @@ cd project_dir
 python3 -m venv env
 . ./env/bin/activate
 ```
+
+## Install and configure MySQL
+```
+sudo apt install mysql-server
+sudo mysql
+CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
 
 ## Install and configure PostgreSQL
 
