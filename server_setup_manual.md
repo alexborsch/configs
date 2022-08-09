@@ -1,5 +1,5 @@
 # Debian Server Set Up for Django Instruction
-
+https://coderlog.top
 ## Create user, setup SSH
 
 Connect through SSH to remote Debian server and update repositories and install some initial needed packages:
